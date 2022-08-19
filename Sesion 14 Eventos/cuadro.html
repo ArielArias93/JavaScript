@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <title>Document</title>
+    <style>
+           .activa {
+
+                width: 476px;
+                height: 330px;
+                background-color: violet;
+                    }
+
+            .activa.active{ 
+
+                background-color: brown;
+                    }
+
+    </style>
+</head>
+<body>
+
+    <div class="activa" Id="miid"></div>
+
+    <script>
+
+            $ (document). ready (function() {
+
+                console.log ("Ready");
+                $ ('#miid').addClass('active');
+                $ ('.activa').addClass('active');
+                $ ('.activa').width('800px');
+            });
+
+    </script>
+
+</body>
+</html>

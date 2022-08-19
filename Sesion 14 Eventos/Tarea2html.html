@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Tarea2 HTML</title>
+</head>
+<body>
+
+    <div>
+        <label>¿En que coordenadas se encuentra "El Monumental", cancha de River Plate (Argentina)?</label>
+    </div>
+    <div>
+        <p value="El Monumental">34° 32′ 43″ S 58° 26′ 58″ O</p>
+        <p value="Cancha de Racing">34° 40′ 03″ S 58° 22′ 07″ O </p>
+        <p value="Cancha de Independiente">34° 40′ 13″ S 58° 22′ 15″ O </p>
+    </div>
+
+    <script>
+
+        
+
+        $('p').each(function() {
+            this.oncopy = function() {
+                if (this.getAttribute("value") === "El Monumental") {
+                    alert("¡Correcto!");
+                } else {
+                    alert("Incorrecto, prueba de nuevo");
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

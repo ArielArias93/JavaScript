@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        dialog [Open]{
+
+            position: fixed;
+            width: 50%;
+            max-width: 750px;
+            top: 10px;
+        }
+
+        dialog ::backdrop {
+
+            background-color: rgba(255, 0, 0, 0.8);
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <p>Una necesidad comun en casi cualquier aplicacion web es la de demostrar dialogos al usuario</p>
+
+    <button id="btn1" onclick="muestra()">Mostrar Dialogo</button>
+
+    <dialog id='Dialogo'>
+
+        <h2>AAAAATENCION!</h2>
+        <p>Se ha producido un problema en la aplicacion</p>
+        <input type="text" id="num">
+        <button id="cerrar">Cerrar</button>
+        <button id="aviso">Aviso</button>
+        <button id="conf">Confirma</button>
+        
+    </dialog>
+
+    <h2>Nombre: </h2>
+
+    <input type="text" id="nombre">
+    <button id="cons1">Muestra en consola</button>
+
+    <script>
+
+        const dialogo = document.getElementById('Dialogo');
+        let p = document.getElementById("btn1");
+        p.onclick = () => dialogo.show();
+
+        let c = document.getElementById("cerrar");
+        c.onclick = (e) => dialogo.close();
+        
+        let a = document.getElementById("aviso");
+        let conf = document.getElementById("conf");
+        let num = document.getElementById("num");
+
+        
+        a.onclick = (e) => alert("Esto es un aviso especial");
+        
+        let q = document.getElementById("conf");
+        q.onclick = muestralerta;
+
+        function muestralerta(evento) {
+
+            const x = confirm("Acepta los terminos?");
+            num.value = x;
+            
+        }
+
+        let nombre = document.getElementById("nombre");
+        let m = document.getElementById("cons1");
+        m.onclick = () => console.log(`Hola ${nombre.value}, ¿has aceptado?: ${num.value} `);
+
+        console.log("apples", "oranges", "banana");
+        console.warn("apples", "oranges", "banana");
+        console.error("apples", "oranges", "banana");
+        console.table("apples", "oranges", "banana"); 
+    </script>
+
+</body>
+</html>

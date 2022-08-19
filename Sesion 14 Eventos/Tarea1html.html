@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <title>RECTANGULO EJERCICIO 1</title>
+
+    <style>
+
+        #rectangulo {
+
+        width: 470px;
+        height: 330px;
+        background-color: white;
+            } 
+
+    </style>
+
+</head>
+<body>
+
+    <div id ="rectangulo"> </div>
+
+    <script>
+
+        
+        function gencolor(){
+
+            var simbolos, color;
+            simbolos = "0123456789ABCDEF";
+            color = "#";
+
+            for (let i = 0; i < 6; i++) {
+                color = color + simbolos[Math.floor(Math.random() * 16)];
+                
+            }
+
+            return color
+
+        }   
+
+         $ ("#rectangulo").mouseleave(function aplicolor() {
+
+                    console.log ("Aplicar");
+                    
+                    $ ("#rectangulo").css('background-color', gencolor());
+
+                    });
+
+
+        $ ("#rectangulo").mouseenter( function colorwhite() {
+
+                    console.log ("Blanco");
+
+                    $ ("#rectangulo").css("background-color", "white");
+
+                    });
+
+</script>
+    
+</body>
+</html>
